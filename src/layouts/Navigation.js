@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <div className="border-b border-orange-500">
+    <div className="border-b border-gray-900">
       <nav className="container py-4 flex mx-auto justify-between items-center  ">
         <Link to="/">
           <img src="/images/logo.png" alt="logo" />
