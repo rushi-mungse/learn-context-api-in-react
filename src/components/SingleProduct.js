@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { cartContext } from "../CartContext";
 
 const SingleProduct = ({ bgColor, product }) => {
+  const { cart, setCart } = useContext(cartContext);
+  const handleAddItem = (product) => {
+    setCart([product, ...cart]);
+  };
   return (
     <div className="flex  flex-col items-center justify-center border p-4 rounded-md">
       <Link className="cursor-pointer" to="/">
@@ -24,7 +30,10 @@ const SingleProduct = ({ bgColor, product }) => {
           </h2>
           <p className="mt-1 text-orange-500">$16.00</p>
         </div>
-        <button className="bg-orange-500 py-1 px-4 mt-4 rounded-full text-white hover:bg-orange-600 duration-300 ease-in-out">
+        <button
+          className="bg-orange-500 py-1 px-4 mt-4 rounded-full text-white hover:bg-orange-600 duration-300 ease-in-out"
+          onClick={() => handleAddItem(product)}
+        >
           ADD
         </button>
       </div>

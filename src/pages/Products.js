@@ -28,7 +28,13 @@ const Products = ({ bgColor }) => {
         </h3>
         <div className="grid grid-cols-4 gap-16">
           {products.map((product) => {
-            return <SingleProduct bgColor={bgColor} product={product} />;
+            return (
+              <SingleProduct
+                bgColor={bgColor}
+                product={product}
+                key={product._id}
+              />
+            );
           })}
         </div>
       </div>

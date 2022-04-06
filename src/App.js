@@ -5,10 +5,13 @@ import Navigation from "./layouts/Navigation";
 import Products from "./pages/Products";
 import Cart from "./pages/Cart";
 import { cartContext } from "./CartContext";
+import { useState } from "react";
 
 const App = () => {
+  const [cart, setCart] = useState([]);
+
   return (
-    <cartContext.Provider value={"Rushikesh"}>
+    <cartContext.Provider value={{ cart, setCart }}>
       <Router>
         <Navigation />
         <Routes>
