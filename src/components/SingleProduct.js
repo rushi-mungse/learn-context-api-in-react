@@ -28,7 +28,9 @@ const SingleProduct = ({ bgColor, product }) => {
           >
             {product.name}
           </h2>
-          <p className="mt-1 text-orange-500">$16.00</p>
+          <p className="mt-1 text-orange-500">
+            ${Math.round(product.price / 1000)}
+          </p>
         </div>
         <button
           className="bg-orange-500 py-1 px-4 mt-4 rounded-full text-white hover:bg-orange-600 duration-300 ease-in-out"
