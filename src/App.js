@@ -4,17 +4,20 @@ import Home from "./pages/Home";
 import Navigation from "./layouts/Navigation";
 import Products from "./pages/Products";
 import Cart from "./pages/Cart";
+import { cartContext } from "./CartContext";
 
 const App = () => {
   return (
-    <Router>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
-    </Router>
+    <cartContext.Provider value={"Rushikesh"}>
+      <Router>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </Router>
+    </cartContext.Provider>
   );
 };
 

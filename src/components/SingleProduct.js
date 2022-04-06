@@ -1,24 +1,26 @@
-const SingleProduct = ({ bgColor }) => {
+import { Link } from "react-router-dom";
+
+const SingleProduct = ({ bgColor, product }) => {
   return (
-    <div className="flex  flex-col">
-      <a className="cursor-pointer" href="#">
-        <img alt="ecommerce" className="" src="/images/peproni.png" />
-      </a>
-      <div className="mt-4 flex justify-between items-center">
+    <div className="flex  flex-col items-center justify-center border p-4 rounded-md">
+      <Link className="cursor-pointer" to="/">
+        <img alt="ecommerce" className="h-56" src="/images/peproni.png" />
+      </Link>
+      <div className="mt-4 flex justify-between items-center w-full px-2">
         <div>
           <h3
             className={`text-xs tracking-widest title-font mb-1  ${
               bgColor === "bg-gray-900" ? "text-white" : ""
             }`}
           >
-            CATEGORY
+            {product.size}
           </h3>
           <h2
             className={`title-font text-lg font-medium ${
               bgColor === "bg-gray-900" ? "text-white" : ""
             }`}
           >
-            The Catalyzer
+            {product.name}
           </h2>
           <p className="mt-1 text-orange-500">$16.00</p>
         </div>
